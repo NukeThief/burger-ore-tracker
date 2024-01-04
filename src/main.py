@@ -1,7 +1,3 @@
-from keep_alive import keep_alive
-
-keep_alive()
-
 """
 Used to run the bot and client.
 
