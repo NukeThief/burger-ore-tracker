@@ -1,8 +1,8 @@
-from flask import Flask,render_template
-from threading import Thread
+from flask import Flask
 app = Flask(__name__)
+
 @app.route('/')
-def index():
+def hello_world():
     return "I am alive and well :)"
 def run():
   app.run(host='0.0.0.0',port=8080)
