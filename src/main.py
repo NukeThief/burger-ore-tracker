@@ -224,26 +224,16 @@ def main():
         )
         global_select = db_cursor.fetchall()
 
-                if len(global_select) > 0 and tier_rank is not None and (
-            (tier_rank >= 9) or (tier_rank >= 7 and ore_type == "SPECTRAL") or
-            (tier_rank >= 8 and ore_type == "IONIZED")):
+        if len(global_select) > 0 and tier_rank is not None:
+          if tier_rank >= 9:
+            this_text = this_text + f"\n\n{global_select[0][0]}\n"
 
-          s_channel = bot_client.get_channel(channel_id)
-          await s_channel.send(this_text +
-                               "".join(f"\n\n{global_select[0][0]}\n"))
-          print(global_select)
+          elif tier_rank >= 7:
+            if ore_type == "SPECTRAL":
+              this_text = this_text + f"\n\n{global_select[0][0]}\n"
 
-        if len(pingselect) > 0:
-          print("Tracking Embed w/ PING")
-          try:
-            s_channel = bot_client.get_channel(channel_id)
-            if s_channel is not None:
-              await s_channel.send(
-                  this_text +
-                  "".join(["\n<@" + str(x[0]) + ">" for x in pingselect]),
-                  embed=this_embed)
-
-              print("Tracked Embed w/ PING")
+            elif (tier_rank >= 8) and (ore_type == "IONIZED"):
+              this_text = this_text + f"\n\n{global_select[0][0]}\n"
 
         if len(pingselect) > 0:
           print("Tracking")
