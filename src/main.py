@@ -149,7 +149,7 @@ def main():
         tier, 0xFFFFFF)  # Get function used if color is not found
     embed = discord.Embed(
         title=
-        f"{username} has found {(ore_type.capitalize() + ' ' if ore_type != 'NORMAL' else '')}{ore_name} {'' if cave_type is None else f'(_{cave_type}_)'}",
+           f"{username} has found{(' an ionized ' if ore_type =='IONIZED' else (' a spectral ' if ore_type == 'SPECTRAL' else ' '))}{ore_name} {'' if cave_type is None else f'(_{cave_type}_)'}",
         description=world,
         color=tier_color,
     )
