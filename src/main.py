@@ -73,7 +73,7 @@ TIER_COLOR_BY_INT = {
     "Enigmatic": 0xCDF600,
     "Unfathomable": 0x032C79,
     "Otherworldly": 0x5E0E32,
-    "Zenith": 0x010101,
+    "Zenith": 0x000000,
 }
 
 TYPE_BY_CHANNEL_IDS = {
